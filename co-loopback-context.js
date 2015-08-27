@@ -1,11 +1,11 @@
 var loopback = require('loopback');
-module.exports = function (app) {
+module.exports = function (app, userModelName) {
     app.use(loopback.context());
     app.use(loopback.token());
     app.use(function (req, res, next) {
         if (!req.accessToken)
             return next();
-        app.models.User.findById(req.accessToken.userId, function (err, user) {
+        app.models[userModelName].findById(req.accessToken.userId, function (err, user) {
             if (err)
                 return next(err);
             if (!user)

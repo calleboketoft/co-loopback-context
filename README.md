@@ -9,5 +9,5 @@ var currentUser = ctx && ctx.get('currentUser');
 
 // Put it in the file 'server.js' here:
 // -- Add your pre-processing middleware here --
-require('../co-loopback-context')(app)
+require('../co-loopback-context')(app, 'nameOfUserModel')
 ```
