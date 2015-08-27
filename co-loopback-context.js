@@ -1,10 +1,3 @@
-// Makes it possible to access currently authenticated user
-// https://github.com/strongloop/loopback/issues/569#issuecomment-62690674
-// var ctx = loopback.getCurrentContext();
-// var currentUser = ctx && ctx.get('currentUser');
-// Put it in the file 'server.js' here:
-// -- Add your pre-processing middleware here --
-// require('../co-loopback-context')(app)
 var loopback = require('loopback');
 module.exports = function (app) {
     app.use(loopback.context());
